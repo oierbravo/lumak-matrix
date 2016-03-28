@@ -1,6 +1,6 @@
 {
   "name": "lumak-matrix",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "FeathersJs simple service for led matrix.",
   "main": "index.js",
   "scripts": {

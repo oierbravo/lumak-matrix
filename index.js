@@ -1,6 +1,9 @@
 'use strict';
 
 const hooks = require('./hooks');
+const NUM_ROWS = 8;
+const NUM_COLS = 8;
+
 
 class Service {
   constructor(options) {
@@ -17,8 +20,7 @@ class Service {
         ];
    
   };
-  var NUM_ROWS = 8;
-  var NUM_COLS = 8;
+  
 
 
   find(params) {
@@ -30,7 +32,7 @@ class Service {
             index:j + i * NUM_COLS,
           x:i,
           y:j,
-          value:matrixData[j + i * NUM_COLS]
+          value:this.matrixData[j + i * NUM_COLS]
 
         }
         output.push(el);
@@ -61,7 +63,7 @@ class Service {
     console.log('matrix-update-index',id);
     console.log('matrix-update-data',data);
    // console.log('update-params',params);
-    if(typeof this.datos[id] !== 'undefined'){
+    if(typeof this.matrixData[id] !== 'undefined'){
       this.matrixData[id] = data.value;
     }
     return Promise.resolve({index:id,value:data.value,x:data.x,y:data.y});
